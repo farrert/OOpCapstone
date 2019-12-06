@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using CapStone.ViewModels;
+//using CapStone.BusinessLayer;
 
 namespace CapStone
 {
@@ -13,5 +15,14 @@ namespace CapStone
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+
+            //GameViewModel gameViewModel = new GameViewModel(GameBusiness);
+
+            MainWindow mainWindowView = new MainWindow();
+            //mainWindowView.DataContext = GameViewModel;
+            mainWindowView.Show();
+        }
     }
 }
