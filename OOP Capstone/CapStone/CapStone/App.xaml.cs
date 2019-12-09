@@ -17,11 +17,7 @@ namespace CapStone
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-
-            //GameViewModel gameViewModel = new GameViewModel(GameBusiness);
-
             MainWindow mainWindowView = new MainWindow();
-            //mainWindowView.DataContext = GameViewModel;
             mainWindowView.Show();
         }
     }

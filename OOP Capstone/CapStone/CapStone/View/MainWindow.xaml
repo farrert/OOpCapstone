@@ -28,9 +28,8 @@
                 TextBlock.FontStretch="Normal"
                 Command="{Binding Path=BoxChangeCommand}" CommandParameter="0">
                     <TextBox
-                 x:Name="p0"
                 HorizontalAlignment="Center"
-                Text="{Binding GetMark}"       
+                Text="{Binding M0}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
@@ -43,7 +42,7 @@
                 Command="{Binding BoxChangeCommand}" CommandParameter="1">
                     <TextBox
                 HorizontalAlignment="Center"
-                Text="{Binding GetMark}"       
+                Text="{Binding M1}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
@@ -54,10 +53,10 @@
                 Height="80"
                 Width="80"
                 Margin="2"
-                        Command="{Binding BoxChangeCommand}" CommandParameter="X">
+                        Command="{Binding BoxChangeCommand}" CommandParameter="2">
                     <TextBox
                 HorizontalAlignment="Center"
-                Text="{Binding DisplayContent}"       
+                Text="{Binding M2}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
@@ -67,10 +66,10 @@
                 Height="80"
                 Width="80"
                 Margin="2"
-                    Command="{Binding BoxChangeCommand}" CommandParameter="X">
+                    Command="{Binding BoxChangeCommand}" CommandParameter="3">
                     <TextBox
                 HorizontalAlignment="Center"
-                Text="{Binding DisplayContent}"       
+                Text="{Binding M3}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
@@ -86,10 +85,10 @@
                 Height="80"
                 Width="80"
                 Margin="2"
-                    Command="{Binding BoxChangeCommand}" CommandParameter="X">
+                    Command="{Binding BoxChangeCommand}" CommandParameter="4">
                     <TextBox
                 HorizontalAlignment="Center"
-                Text="{Binding DisplayContent}"       
+                Text="{Binding M4}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
@@ -99,10 +98,10 @@
                 Height="80"
                 Width="80"
                 Margin="2"
-                    Command="{Binding BoxChangeCommand}" CommandParameter="X">
+                    Command="{Binding BoxChangeCommand}" CommandParameter="5">
                     <TextBox
                 HorizontalAlignment="Center"
-                Text="{Binding DisplayContent}"       
+                Text="{Binding M5}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
@@ -112,10 +111,10 @@
                 Height="80"
                 Width="80"
                 Margin="2"
-                    Command="{Binding BoxChangeCommand}" CommandParameter="X">
+                    Command="{Binding BoxChangeCommand}" CommandParameter="6">
                     <TextBox
                 HorizontalAlignment="Center"
-                Text="{Binding DisplayContent}"       
+                Text="{Binding M6}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
@@ -125,10 +124,10 @@
                 Height="80"
                 Width="80"
                 Margin="2"
-                    Command="{Binding BoxChangeCommand}" CommandParameter="X">
+                    Command="{Binding BoxChangeCommand}" CommandParameter="7">
                     <TextBox
                 HorizontalAlignment="Center"
-                Text="{Binding DisplayContent}"       
+                Text="{Binding M7}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
@@ -144,10 +143,10 @@
                 Height="80"
                 Width="80"
                 Margin="2"
-                    Command="{Binding BoxChangeCommand}" CommandParameter="X">
+                    Command="{Binding BoxChangeCommand}" CommandParameter="8">
                     <TextBox
                 HorizontalAlignment="Center"
-                Text="{Binding DisplayContent}"       
+                Text="{Binding M8}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
@@ -157,10 +156,10 @@
                 Height="80"
                 Width="80"
                 Margin="2"
-                    Command="{Binding BoxChangeCommand}" CommandParameter="X">
+                    Command="{Binding BoxChangeCommand}" CommandParameter="9">
                     <TextBox
                 HorizontalAlignment="Center"
-                Text="{Binding DisplayContent}"       
+                Text="{Binding M9}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
@@ -170,10 +169,10 @@
                 Height="80"
                 Width="80"
                 Margin="2"
-                    Command="{Binding BoxChangeCommand}" CommandParameter="X">
+                    Command="{Binding BoxChangeCommand}" CommandParameter="10">
                     <TextBox
                 HorizontalAlignment="Center"
-                Text="{Binding DisplayContent}"       
+                Text="{Binding M10}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
@@ -183,10 +182,10 @@
                 Height="80"
                 Width="80"
                 Margin="2"
-                    Command="{Binding BoxChangeCommand}" CommandParameter="X">
+                    Command="{Binding BoxChangeCommand}" CommandParameter="11">
                     <TextBox
                 HorizontalAlignment="Center"
-                Text="{Binding DisplayContent}"       
+                Text="{Binding M11}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
@@ -202,10 +201,10 @@
                 Height="80"
                 Width="80"
                 Margin="2"
-                    Command="{Binding BoxChangeCommand}" CommandParameter="X">
+                    Command="{Binding BoxChangeCommand}" CommandParameter="12">
                     <TextBox
                 HorizontalAlignment="Center"
-                Text="{Binding DisplayContent}"       
+                Text="{Binding M12}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
@@ -215,10 +214,10 @@
                 Height="80"
                 Width="80"
                 Margin="2"
-                    Command="{Binding BoxChangeCommand}" CommandParameter="X">
+                    Command="{Binding BoxChangeCommand}" CommandParameter="13">
                     <TextBox
                 HorizontalAlignment="Center"
-                Text="{Binding DisplayContent}"       
+                Text="{Binding M13}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
@@ -228,10 +227,10 @@
                 Height="80"
                 Width="80"
                 Margin="2"
-                    Command="{Binding BoxChangeCommand}" CommandParameter="X">
+                    Command="{Binding BoxChangeCommand}" CommandParameter="14">
                     <TextBox
                 HorizontalAlignment="Center"
-                Text="{Binding DisplayContent}"       
+                Text="{Binding M14}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
@@ -241,17 +240,16 @@
                 Height="80"
                 Width="80"
                 Margin="2"
-                    Command="{Binding BoxChangeCommand}" CommandParameter="X">
+                    Command="{Binding BoxChangeCommand}" CommandParameter="15">
                     <TextBox
                 HorizontalAlignment="Center"
-                Text="{Binding DisplayContent}"       
+                Text="{Binding M15}"       
                 FontSize="40"
                 Width="50"
                 Height="50" 
                 IsReadOnly="True"/>
                 </Button>
             </StackPanel>
-
             <StackPanel
             HorizontalAlignment="Center"
             Orientation="Horizontal"
@@ -265,7 +263,7 @@
                 </Label>
                 <TextBox
                     Width="50"
-                    Text="{Binding DisplayXWins}">
+                    Text="{Binding XWins}" >
                 </TextBox>
 
                 <Label
@@ -300,7 +298,7 @@
                     Height="50"></Label>
             <TextBox
                 Text="{Binding DisplayTurn}"
-                Height="50"></TextBox>
+                Height="50" TextChanged="TextBox_TextChanged"></TextBox>
             <Label
                     Height="160"></Label>
             <Button

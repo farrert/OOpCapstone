@@ -11,7 +11,7 @@ namespace CapStone.Models
     {
         #region Enum
 
-            public enum BoxState { Empty, X, O }
+        public enum BoxState { Empty, X, O }
         private Dictionary<string, BoxState> CurrentBox = new Dictionary<string, BoxState>()
         {
             { "", BoxState.Empty },
@@ -19,52 +19,35 @@ namespace CapStone.Models
             { "O", BoxState.O }
         };
 
-            #endregion
-            #region Fields
+        #endregion
+        #region Fields
 
-            private bool _checked;
-            private BoxState _state;
+        private BoxState _state;
         private int _pos;
-        private string _mark;
 
         #endregion
         #region PROPERTIES
 
-        public string Mark
-        {
-            get { return _mark; }
-            set
-            {
-                _mark = value;
-                OnPropertyChanged(nameof(Mark));
-            }
-        }
         public int Pos
         {
             get { return _pos; }
-            set { _pos = value; }
-        }
-        public bool Checked
-        {
-            get { return _checked; }
-            set { _checked = value; }
-        }
-            public BoxState State
-            {
-                get { return _state; }
-                set
-                {
-                    _state = value;
-                    OnPropertyChanged(nameof(BoxState));
-                }
+            set {
+                _pos = value;
+                OnPropertyChanged("Pos");
             }
+        }
+        public BoxState State
+        {
+            get { return _state; }
+            set
+            {
+                _state = value;
+                OnPropertyChanged(nameof(BoxState));
+            }
+        }
         #endregion
         #region Constructors
         public Box()
-        {
-
-        }
-        public Box(Box Pos)
         {
 
         }
