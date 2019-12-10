@@ -48,12 +48,11 @@
                 Height="50" 
                 IsReadOnly="True"/>
                 </Button>
-                <!--TextChanged="TextBox_TextChanged"-->
                 <Button
                 Height="80"
                 Width="80"
                 Margin="2"
-                        Command="{Binding BoxChangeCommand}" CommandParameter="2">
+                Command="{Binding BoxChangeCommand}" CommandParameter="2">
                     <TextBox
                 HorizontalAlignment="Center"
                 Text="{Binding M2}"       
@@ -270,6 +269,7 @@
                 HorizontalAlignment="Center"
                     Content="Match Totals"
                     Width="200"
+                    FontSize="32"
                     >
                 </Label>
                 <Label
@@ -298,15 +298,24 @@
                     Height="50"></Label>
             <TextBox
                 Text="{Binding DisplayTurn}"
-                Height="50" TextChanged="TextBox_TextChanged"></TextBox>
+                Height="50">
+            </TextBox>
             <Label
-                    Height="160"></Label>
+                    Height="120">
+            </Label>
             <Button
                 Height="50"
                 Width="120"
                 Margin="2"
-                Content="Load?">
-
+                Content="New?"
+                Command="{Binding NewGameCommand}">
+            </Button>
+            <Button
+                Height="50"
+                Width="120"
+                Margin="2"
+                Content="Load?"
+                Command="{Binding LoadGameCommand}">
             </Button>
         </StackPanel>
         <StackPanel
@@ -316,7 +325,7 @@
             Width="200"
             Margin="0">
             <StackPanel
-                Height="300">
+                Height="250">
                 <Label
                     Content="By: Tom Farrer"
                     FontSize="25"
@@ -328,15 +337,23 @@
                 Height="50"></TextBox>
             </StackPanel>
             <StackPanel
-                    Height="100">
+                    Height="150">
                 <Label
-                        Content=""></Label>
+                        Content="">
+                </Label>
                 <Button
                 Height="50"
                 Width="120"
                 Margin="2"
-                Content="Save?">
-
+                Content="Save?"
+                 Command="{Binding SaveGameCommand}">
+                </Button>
+                <Button
+                Height="50"
+                Width="120"
+                Margin="2"
+                Content="Delete?"
+                 Command="{Binding DeleteGameCommand}">
                 </Button>
             </StackPanel>
 

@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Input;
 using CapStone.Models;
 using Demo_NTier_XmlJsonData;
+using CapStone.DAL;
 using static CapStone.Models.Box;
 
 namespace CapStone.ViewModels
@@ -18,6 +19,10 @@ namespace CapStone.ViewModels
         #region Commands
 
         public ICommand BoxChangeCommand { get; set; }
+        public ICommand NewGameCommand { get; set; }
+        public ICommand LoadGameCommand { get; set; }
+        public ICommand SaveGameCommand { get; set; }
+        public ICommand DeleteGameCommand { get; set; }
 
         #endregion
 
@@ -34,6 +39,8 @@ namespace CapStone.ViewModels
         public int _pos;
         private int _XWins;
         private int _OWins;
+        private int _XRecord;
+        private int _ORecord;
         Random rnd = new Random();
         private int move;
         #region ugly textbox fields
@@ -203,13 +210,31 @@ namespace CapStone.ViewModels
             }
         }
         #endregion
+        public int XRecord
+        {
+            get { return _XRecord; }
+            set
+            {
+                _XRecord = value;
+                OnPropertyChanged("XRecord");
+            }
+        }
+        public int ORecord
+        {
+            get { return _ORecord; }
+            set
+            {
+                _ORecord = value;
+                OnPropertyChanged("ORecord");
+            }
+        }
         public int XWins
         {
             get { return _XWins; }
             set
             {
                 _XWins = value;
-                OnPropertyChanged(nameof(XWins));
+                OnPropertyChanged("XWins");
             }
         }
         public int OWins
@@ -218,7 +243,7 @@ namespace CapStone.ViewModels
             set
             {
                 _OWins = value;
-                OnPropertyChanged(nameof(OWins));
+                OnPropertyChanged("OWins");
             }
         }
         public ObservableCollection<Box> Boxes
@@ -268,6 +293,10 @@ namespace CapStone.ViewModels
         {
             MakeBoard();
             BoxChangeCommand = new RelayCommand(new Action<object>(GetUpdateBox()));
+            NewGameCommand = new DelegateCommand(GetNewGame());
+            LoadGameCommand = new DelegateCommand(GetLoadGame());
+            SaveGameCommand = new DelegateCommand(GetSaveGame());
+            DeleteGameCommand = new DelegateCommand(GetDeleteGame());
         }
         /// <summary>
         /// Makes a new board
@@ -282,6 +311,174 @@ namespace CapStone.ViewModels
                 _currentBox.Pos = i;
                 _currentBox.State = Box.BoxState.Empty;
                 _boardState.Add(_currentBox);
+            }
+        }
+        private void UpdateBoard(Box _currentBox)
+        {
+            switch (_currentBox.Pos)
+            {
+                case 0:
+                    if (M0 == null || M0 == "")
+                    {
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M0 = "";
+                        else
+                            M0 = _currentBox.State.ToString();
+                        MyTurn ^= true;
+                    }
+                    break;
+                case 1:
+                    if (M1 == null || M1 == "")
+                    {
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M1 = "";
+                        else
+                            M1 = _currentBox.State.ToString();
+                        MyTurn ^= true;
+                    }
+                    break;
+                case 2:
+                    if (M2 == null || M2 == "")
+                    {
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M2 = "";
+                        else
+                            M2 = _currentBox.State.ToString();
+                        MyTurn ^= true;
+                    }
+                    break;
+                case 3:
+                    if (M3 == null || M3 == "")
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M3 = "";
+                        else
+                        {
+                            M3 = _currentBox.State.ToString();
+                            MyTurn ^= true;
+                        }
+                    break;
+                case 4:
+                    if (M4 == null || M4 == "")
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M4 = "";
+                        else
+                        {
+                            M4 = _currentBox.State.ToString();
+                            MyTurn ^= true;
+                        }
+                    break;
+                case 5:
+                    if (M5 == null || M5 == "")
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M5 = "";
+                        else
+                        {
+                            M5 = _currentBox.State.ToString();
+                            MyTurn ^= true;
+                        }
+                    break;
+                case 6:
+                    if (M6 == null || M6 == "")
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M6 = "";
+                        else
+                        {
+                            M6 = _currentBox.State.ToString();
+                            MyTurn ^= true;
+                        }
+                    break;
+                case 7:
+                    if (M7 == null || M7 == "")
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M7 = "";
+                        else
+                        {
+                            M7 = _currentBox.State.ToString();
+                            MyTurn ^= true;
+                        }
+                    break;
+                case 8:
+                    if (M8 == null || M8 == "")
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M8 = "";
+                        else
+                        {
+                            M8 = _currentBox.State.ToString();
+                            MyTurn ^= true;
+                        }
+                    break;
+                case 9:
+                    if (M9 == null || M9 == "")
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M9 = "";
+                        else
+                        {
+                            M9 = _currentBox.State.ToString();
+                            MyTurn ^= true;
+                        }
+                    break;
+                case 10:
+                    if (M10 == null || M10 == "")
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M10 = "";
+                        else
+                        {
+                            M10 = _currentBox.State.ToString();
+                            MyTurn ^= true;
+                        }
+                    break;
+                case 11:
+                    if (M11 == null || M11 == "")
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M11 = "";
+                        else
+                        {
+                            M11 = _currentBox.State.ToString();
+                            MyTurn ^= true;
+                        }
+                    break;
+                case 12:
+                    if (M12 == null || M12 == "")
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M12 = "";
+                        else
+                        {
+                            M12 = _currentBox.State.ToString();
+                            MyTurn ^= true;
+                        }
+                    break;
+                case 13:
+                    if (M13 == null || M13 == "")
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M13 = "";
+                        else
+                        {
+                            M13 = _currentBox.State.ToString();
+                            MyTurn ^= true;
+                        }
+                    break;
+                case 14:
+                    if (M14 == null || M14 == "")
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M14 = "";
+                        else
+                        {
+                            M14 = _currentBox.State.ToString();
+                            MyTurn ^= true;
+                        }
+                    break;
+                case 15:
+                    if (M15 == null || M15 == "")
+                        if (_currentBox.State == Box.BoxState.Empty)
+                            M15 = "";
+                        else
+                        {
+                            M15 = _currentBox.State.ToString();
+                            MyTurn ^= true;
+                        }
+                    break;
+                default:
+                    break;
             }
         }
         /// <summary>
@@ -299,123 +496,7 @@ namespace CapStone.ViewModels
                         if (_currentBox.Pos == _pos)
                         {
                             _currentBox.State = Box.BoxState.X;
-                            switch (_currentBox.Pos)
-                            {
-                                case 0:
-                                    if (M0 == null)
-                                    {
-                                        M0 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                case 1:
-                                    if (M1 == null)
-                                    {
-                                        M1 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                case 2:
-                                    if (M2 == null)
-                                    {
-                                        M2 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                case 3:
-                                    if (M3 == null)
-                                    {
-                                        M3 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                case 4:
-                                    if (M4 == null)
-                                    {
-                                        M4 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                case 5:
-                                    if (M5 == null)
-                                    {
-                                        M5 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                case 6:
-                                    if (M6 == null)
-                                    {
-                                        M6 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                case 7:
-                                    if (M7 == null)
-                                    {
-                                        M7 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                case 8:
-                                    if (M8 == null)
-                                    {
-                                        M8 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                case 9:
-                                    if (M9 == null)
-                                    {
-                                        M9 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                case 10:
-                                    if (M10 == null)
-                                    {
-                                        M10 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                case 11:
-                                    if (M11 == null)
-                                    {
-                                        M11 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                case 12:
-                                    if (M12 == null)
-                                    {
-                                        M12 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                case 13:
-                                    if (M13 == null)
-                                    {
-                                        M13 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                case 14:
-                                    if (M14 == null)
-                                    {
-                                        M14 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                case 15:
-                                    if (M15 == null)
-                                    {
-                                        M15 = _currentBox.State.ToString();
-                                        MyTurn = false;
-                                    }
-                                    break;
-                                default:
-                                    break;
-                            }
+                            UpdateBoard(_currentBox);
                         }
                     };
                 }
@@ -431,6 +512,72 @@ namespace CapStone.ViewModels
         {
             return UpdateBox;
         }
+        public Action GetNewGame()
+        {
+            return NewGame;
+        }
+        public Action GetLoadGame()
+        {
+            return LoadGame;
+        }
+        public Action GetSaveGame()
+        {
+            return SaveGame;
+        }
+        public Action GetDeleteGame()
+        {
+            return DeleteGame;
+        }
+        public void NewGame()
+        {
+            XWins = 0;
+            OWins = 0;
+            ClearBoard();
+            MakeBoard();
+        }
+        public void LoadGame()
+        {
+            ClearBoard();
+            SetBoard();
+            XWins = _XRecord;
+            OWins = _ORecord;
+        }
+        public void SaveGame()
+        {
+            Boxes = new ObservableCollection<Box>();
+            for (var i = 0; i < 17; i++)
+            {
+                _currentBox = new Box();
+                _currentBox = BoardState[i];
+                Boxes.Add(_currentBox);
+            }
+            _XRecord = XWins;
+            _ORecord = OWins;
+        }
+        public void DeleteGame()
+        {
+            Boxes.Clear();
+            _XRecord = 0;
+            _ORecord = 0;
+        }
+        public void SetBoard()
+        {
+            if (Boxes != null)
+            {
+                BoardState = new List<Box>(16);
+                foreach (Box _currentBox in Boxes)
+                {
+                    BoardState.Add(_currentBox);
+                    UpdateBoard(_currentBox);
+                }
+            }
+            //else
+            //{
+            //    DAL.SeedData.GenerateBoxes();
+            //    foreach (Box _currentBox in SeedData._boardSeed)
+            //        UpdateBoard(_currentBox);
+            //}
+        }
         /// <summary>
         /// Changes an unmarked box into an O and displays
         /// </summary>
@@ -445,123 +592,7 @@ namespace CapStone.ViewModels
                     if (_currentBox.Pos == move)
                     {
                         _currentBox.State = Box.BoxState.O;
-                        switch (_currentBox.Pos)
-                        {
-                            case 0:
-                                if (M0 == null)
-                                {
-                                    M0 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            case 1:
-                                if (M1 == null)
-                                {
-                                    M1 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            case 2:
-                                if (M2 == null)
-                                {
-                                    M2 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            case 3:
-                                if (M3 == null)
-                                {
-                                    M3 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            case 4:
-                                if (M4 == null)
-                                {
-                                    M4 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            case 5:
-                                if (M5 == null)
-                                {
-                                    M5 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            case 6:
-                                if (M6 == null)
-                                {
-                                    M6 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            case 7:
-                                if (M7 == null)
-                                {
-                                    M7 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            case 8:
-                                if (M8 == null)
-                                {
-                                    M8 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            case 9:
-                                if (M9 == null)
-                                {
-                                    M9 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            case 10:
-                                if (M10 == null)
-                                {
-                                    M10 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            case 11:
-                                if (M11 == null)
-                                {
-                                    M11 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            case 12:
-                                if (M12 == null)
-                                {
-                                    M12 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            case 13:
-                                if (M13 == null)
-                                {
-                                    M13 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            case 14:
-                                if (M14 == null)
-                                {
-                                    M14 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            case 15:
-                                if (M15 == null)
-                                {
-                                    M15 = _currentBox.State.ToString();
-                                    MyTurn = true;
-                                }
-                                break;
-                            default:
-                                break;
-                        }
+                        UpdateBoard(_currentBox);
                     }
                 }
             }
@@ -571,13 +602,13 @@ namespace CapStone.ViewModels
         /// </summary>
         private void CheckConditions()
         {
-            if (M0 == Box.BoxState.X.ToString() && M1 == Box.BoxState.X.ToString() && M2 == Box.BoxState.X.ToString() && M3 == Box.BoxState.X.ToString())
+            if (M0 == "X" && M1 == "X" && M2 == "X" && M3 == "X")
             {
                 XWins++;
                 ClearBoard();
                 MakeBoard();
             }
-            if (M4 == Box.BoxState.X.ToString() && M5 == Box.BoxState.X.ToString() && M6 == Box.BoxState.X.ToString() && M7 == Box.BoxState.X.ToString())
+            if (M4 == "X" && M5 == "X" && M6 == "X" && M7 == Box.BoxState.X.ToString())
             {
                 XWins++;
                 ClearBoard();
@@ -632,11 +663,11 @@ namespace CapStone.ViewModels
                 MakeBoard();
             }
             if (M0 == Box.BoxState.O.ToString() && M1 == Box.BoxState.O.ToString() && M2 == Box.BoxState.O.ToString() && M3 == Box.BoxState.O.ToString())
-            {                      
-                OWins++;           
-                ClearBoard();      
-                MakeBoard();       
-            }                      
+            {
+                OWins++;
+                ClearBoard();
+                MakeBoard();
+            }
             if (M4 == Box.BoxState.O.ToString() && M5 == Box.BoxState.O.ToString() && M6 == Box.BoxState.O.ToString() && M7 == Box.BoxState.O.ToString())
             {
                 OWins++;
@@ -691,12 +722,14 @@ namespace CapStone.ViewModels
                 ClearBoard();
                 MakeBoard();
             }
-            if (M0 != null && M1 != null && M2 != null && M3 != null && M4 != null && M5 != null && M6 != null && M7 != null && M8 != null && M9 != null && M10 != null && M11 != null && M12 != null && M13 != null && M14 != null && M15 != null)
+            if (M0 != null && M1 != null && M2 != null && M3 != null && M4 != null && M5 != null && M6 != null && M7 != null && M8 != null && M9 != null && M10 != null && M11 != null && M12 != null && M13 != null && M14 != null && M15 != null &&
+                M0 != "" && M1 != "" && M2 != "" && M3 != "" && M4 != "" && M5 != "" && M6 != "" && M7 != "" && M8 != "" && M9 != "" && M10 != "" && M11 != "" && M12 != "" && M13 != "" && M14 != "" && M15 != "")
             {
                 ClearBoard();
                 MakeBoard();
             }
         }
+
         private void ClearBoard()
         {
             BoardState.Clear();

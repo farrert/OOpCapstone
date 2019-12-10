@@ -12,26 +12,23 @@ namespace CapStone.Models
         #region Enum
 
         public enum BoxState { Empty, X, O }
-        private Dictionary<string, BoxState> CurrentBox = new Dictionary<string, BoxState>()
-        {
-            { "", BoxState.Empty },
-            { "X", BoxState.X },
-            { "O", BoxState.O }
-        };
 
         #endregion
+
         #region Fields
 
         private BoxState _state;
         private int _pos;
 
         #endregion
-        #region PROPERTIES
+
+        #region Properties
 
         public int Pos
         {
             get { return _pos; }
-            set {
+            set
+            {
                 _pos = value;
                 OnPropertyChanged("Pos");
             }
@@ -46,6 +43,7 @@ namespace CapStone.Models
             }
         }
         #endregion
+
         #region Constructors
         public Box()
         {

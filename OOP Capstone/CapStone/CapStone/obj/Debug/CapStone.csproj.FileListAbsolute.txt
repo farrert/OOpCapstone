@@ -10,7 +10,6 @@ Q:\OOP Capstone\CapStone\CapStone\obj\Debug\View\MainWindow.baml
 Q:\OOP Capstone\CapStone\CapStone\obj\Debug\CapStone.g.resources
 Q:\OOP Capstone\CapStone\CapStone\obj\Debug\CapStone.Properties.Resources.resources
 Q:\OOP Capstone\CapStone\CapStone\obj\Debug\CapStone.csproj.GenerateResource.cache
-Q:\OOP Capstone\CapStone\CapStone\obj\Debug\CapStone.csproj.CoreCompileInputs.cache
 Q:\OOP Capstone\CapStone\CapStone\obj\Debug\CapStone.exe
 Q:\OOP Capstone\CapStone\CapStone\obj\Debug\CapStone.pdb
 Q:\OOP Capstone\CapStone\CapStone\obj\Debug\GeneratedInternalTypeHelper.g.cs
