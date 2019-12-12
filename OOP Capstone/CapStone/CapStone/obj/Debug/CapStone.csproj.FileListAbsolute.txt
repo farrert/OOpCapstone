@@ -13,3 +13,4 @@ Q:\OOP Capstone\CapStone\CapStone\obj\Debug\CapStone.csproj.GenerateResource.cac
 Q:\OOP Capstone\CapStone\CapStone\obj\Debug\CapStone.exe
 Q:\OOP Capstone\CapStone\CapStone\obj\Debug\CapStone.pdb
 Q:\OOP Capstone\CapStone\CapStone\obj\Debug\GeneratedInternalTypeHelper.g.cs
+Q:\OOP Capstone\CapStone\CapStone\obj\Debug\CapStone.csproj.CoreCompileInputs.cache
